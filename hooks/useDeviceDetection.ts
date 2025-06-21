@@ -7,7 +7,6 @@ interface DeviceInfo {
   isTablet: boolean
   isDesktop: boolean
   isLowEnd: boolean
-  supportsHover: boolean
   prefersReducedMotion: boolean
 }
 
@@ -17,7 +16,6 @@ export function useDeviceDetection(): DeviceInfo {
     isTablet: false,
     isDesktop: true,
     isLowEnd: false,
-    supportsHover: true,
     prefersReducedMotion: false,
   })
 
@@ -34,9 +32,6 @@ export function useDeviceDetection(): DeviceInfo {
         (navigator as any).deviceMemory <= 2 ||
         /android.*version\/[0-4]/i.test(userAgent)
 
-      // Check hover support
-      const supportsHover = window.matchMedia("(hover: hover)").matches
-
       // Check motion preferences
       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
 
@@ -45,7 +40,6 @@ export function useDeviceDetection(): DeviceInfo {
         isTablet,
         isDesktop,
         isLowEnd,
-        supportsHover,
         prefersReducedMotion,
       })
     }

@@ -8,7 +8,7 @@ import { useState } from "react"
 
 export default function PrincipalCard() {
   const { speak } = useSpeech()
-  const { isMobile, supportsHover } = useDeviceDetection()
+  const { isMobile } = useDeviceDetection()
   const [isPlaying, setIsPlaying] = useState(false)
 
   const handleNameInteraction = () => {
@@ -120,7 +120,7 @@ export default function PrincipalCard() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           onClick={isMobile ? handleNameInteraction : undefined}
-          onMouseEnter={supportsHover ? handleNameInteraction : undefined}
+          onMouseEnter={!isMobile ? handleNameInteraction : undefined}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
