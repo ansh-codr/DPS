@@ -5,22 +5,18 @@ import Navbar from "./Navbar"
 import Footer from "./Footer"
 // Import the new components at the top
 import ParallaxBackground from "./ParallaxBackground"
-import CosmicCursor from "./CosmicCursor"
 import PageTransition from "./PageTransition"
 
 interface LayoutProps {
   children: ReactNode
 }
 
-// Update the Layout component to include the new cosmic effects
+// Update the Layout component to remove cosmic cursor
 export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white overflow-x-hidden">
       {/* Parallax Background Effects */}
       <ParallaxBackground />
-
-      {/* Cosmic Cursor */}
-      <CosmicCursor />
 
       {/* Animated background stars (keep existing) */}
       <div className="fixed inset-0 z-0">

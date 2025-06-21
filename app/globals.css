@@ -23,26 +23,6 @@ body {
   min-height: 100vh;
 }
 
-/* Conditional cursor hiding - only on desktop with hover support */
-@media (hover: hover) and (pointer: fine) {
-  * {
-    cursor: none;
-  }
-
-  /* Show cursor on form elements for better UX */
-  input,
-  textarea,
-  select {
-    cursor: text !important;
-  }
-
-  button,
-  a,
-  [role="button"] {
-    cursor: pointer !important;
-  }
-}
-
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
