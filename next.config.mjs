@@ -13,9 +13,12 @@ const nextConfig = {
     unoptimized: true,
     domains: [],
     formats: ['image/webp', 'image/avif'],
+    loader: 'default',
+    minimumCacheTTL: 60,
   },
   experimental: {
     optimizeCss: true,
+    optimizePackageImports: ['framer-motion', 'lucide-react'],
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
@@ -23,6 +26,12 @@ const nextConfig = {
   swcMinify: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  compress: true,
+  generateEtags: false,
+  onDemandEntries: {
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
+  },
 }
 
 export default nextConfig
